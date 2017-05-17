@@ -27,7 +27,7 @@ app.configure('development', function () {
 // Routes
 
 app.get('/', function (req, res) {
-  console.log('file successfully deleted');
+ 
 
   //  res.render('gallery',);
   res.render('index', { data: getImages() });
@@ -36,7 +36,7 @@ app.get('/', function (req, res) {
 });
 
 app.post('/', function (req, res) {
-  deleteAfterUpload(req.files.myFile.path);
+ // deleteAfterUpload(req.files.myFile.path);
   res.end();
 });
 
