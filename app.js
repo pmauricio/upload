@@ -67,6 +67,10 @@ function getImages()//, callback)
   var fs = require('fs'),
   files = [];
 var contents = fs.readdirSync('public/images');
+contents.sort(function(a, b) {
+               return fs.statSync(dir + a).mtime.getTime() - 
+                      fs.statSync(dir + b).mtime.getTime();
+           });
 console.log(contents);
 
     for (i = 0; i < contents.length; i++) {
